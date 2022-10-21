@@ -14,7 +14,7 @@ public class OrderDAO {
         daoService = new DAOService();
     }
 
-
+// ADT - Abstract Data Type - class
     public void insertCustomer(Order order) {
         try {
             Connection con = daoService.getConnection();
@@ -40,9 +40,9 @@ public class OrderDAO {
     }
     public void createTable(){
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "postgres");
+
+            Connection con = daoService.getConnection();
+
             Statement stmt = con.createStatement();
             String query = " Create table if not exists " + TABLE_NAME +
                     " (id bigint NOT NULL," +

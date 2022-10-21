@@ -13,7 +13,6 @@ public class NameGenerator {
         Random random = new Random();
         int randomIndex = random.nextInt(names.length);
         String name = names[randomIndex];
-        System.out.println("Names = " + name);
         return name;
     }
     public static void main(String[] args) {

@@ -6,15 +6,22 @@ import com.bootcoding.restaurant.utils.AddressGenerator;
 import com.bootcoding.restaurant.utils.EmailIdGenerator;
 import com.bootcoding.restaurant.utils.NameGenerator;
 import com.bootcoding.restaurant.utils.PhoneNumberGenerator;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.File;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.Date;
 
 public class CustomerService {
-    public void createDummyCustomers(){
-        CustomerDAO customerDAO = new CustomerDAO();
 
+    CustomerDAO customerDAO = new CustomerDAO();
+
+    public void createDummyCustomers(){
         for(int i = 0; i < 100; i++){
             Customer customer = new Customer();
+
             customer.setCustomerId(i + 1);
             customer.setName(NameGenerator.getName());
             customer.setAddress(AddressGenerator.getAddress());
@@ -28,14 +35,10 @@ public class CustomerService {
 
             customerDAO.insertCustomer(customer);
 
-
-             System.out.println(" Customer Details: ");
-            System.out.println("Name : " + customer.getName());
-            System.out.println("City : " + customer.getCity());
-            System.out.println("Address : " + customer.getAddress());
-            System.out.println("State : "+ customer.getState());
-            System.out.println("Email Id : " + customer.getEmailId());
-            System.out.println("Phone : " + customer.getPhoneNumber());
         }
+    }
+
+    public void creteTable() {
+        customerDAO.createTable();
     }
 }

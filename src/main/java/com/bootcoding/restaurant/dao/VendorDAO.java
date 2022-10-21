@@ -13,16 +13,16 @@ public class VendorDAO {
         // Inside Constructor
         daoService = new DAOService();
     }
-    public void insertCustomer(Vendor Vendor) {
+    public void insertVendor(Vendor Vendor) {
         try {
             Connection con = daoService.getConnection();
             if(!daoService.exists(con, TABLE_NAME, Vendor.getVendorId())) {
                 String sql = "INSERT INTO " + TABLE_NAME + " VALUES ( ?, ?, ?, ?, ?, ?, ?,?,?,?)";
                 PreparedStatement ps = con.prepareStatement(sql);
                 ps.setLong(1, Vendor.getVendorId());
-                ps.setString(3, Vendor.getName());
-                ps.setLong(4, Vendor.getPhoneNumber());
-                ps.setString(2, Vendor.getAddress());
+                ps.setString(2, Vendor.getName());
+                ps.setLong(3, Vendor.getPhoneNumber());
+                ps.setString(4, Vendor.getAddress());
                 ps.setString(5, Vendor.getEmailId());
                 ps.setString(6, Vendor.getCity());
                 ps.setString(7, Vendor.getState());
@@ -41,14 +41,14 @@ public class VendorDAO {
     }
     public void createTable(){
         try {
-            Class.forName("org.postgresql.Driver");
-            Connection con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-                    "postgres", "postgres");
+
+            Connection con = daoService.getConnection();
+
             Statement stmt = con.createStatement();
             String query = " Create table if not exists " + TABLE_NAME +
                     " (id bigint NOT NULL," +
                     " name text,"+
-                    " phone_number decimal," +
+                    " phone_number bigint," +
                     " address text,"+
                     " email_id text," +
                     " city text," +

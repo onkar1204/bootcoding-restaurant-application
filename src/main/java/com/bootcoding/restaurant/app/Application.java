@@ -5,30 +5,28 @@ import com.bootcoding.restaurant.model.Customer;
 import com.bootcoding.restaurant.model.Order;
 import com.bootcoding.restaurant.model.Vendor;
 import com.bootcoding.restaurant.service.CustomerService;
+import com.bootcoding.restaurant.service.VendorService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class Application {
     public static void main(String[] args) {
 
 
-        CustomerDAO cd = new CustomerDAO();
-        cd.createTable();
 
-        MenuItemDAO Md = new MenuItemDAO();
-        Md.createTable();
 
-        OrderDAO OD = new OrderDAO();
-        OD.createTable();
 
-        OrderMenuItemDAO odd = new OrderMenuItemDAO();
-        odd.createTable();
 
-        VendorDAO Vd = new VendorDAO();
-        Vd.createTable();
+        CustomerService cs = new CustomerService();
+        cs.creteTable();
+        cs.createDummyCustomers();
 
-        CustomerService Cs = new CustomerService();
-       // Cs.createDummyCustomers();
+
+        VendorService vs = new VendorService();
+        vs.createTable();
+        vs.createVendors();
 
 
     }
@@ -79,6 +77,16 @@ public class Application {
         System.out.println("Order Date: " + order.getOrderDate());
         System.out.println("Order Delivery Address : " + order.getDeliveryAddress());
 
+    }
+
+    private void generateJson(Customer customer){
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            String jsonData = objectMapper.writeValueAsString(customer);
+            System.out.println(jsonData);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 

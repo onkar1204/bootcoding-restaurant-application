@@ -19,7 +19,7 @@ public class PasswordGenerator {
             System.out.println("Random Index " + randomIndex
                     + " and Character: " + character);
         }
-        System.out.println("System Generated Password is " + password);
+        //System.out.println("System Generated Password is " + password);
         return password;
     }
 

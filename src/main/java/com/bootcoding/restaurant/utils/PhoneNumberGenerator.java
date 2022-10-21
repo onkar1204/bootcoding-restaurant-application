@@ -11,7 +11,7 @@ public class PhoneNumberGenerator {
     public static int getPhoneNumber(){
         int number = random.nextInt(MAX - MIN); // 899999
         int otp = MIN + number;
-        System.out.println(" Phone Number = " + otp);
+        //System.out.println(" Phone Number = " + otp);
         return otp;
     }
 

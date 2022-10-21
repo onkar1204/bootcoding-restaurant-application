@@ -39,11 +39,10 @@ public class OrderMenuItemDAO {
 
 
         try{
-            Class.forName("org.postgresql.Driver");
 
-            Connection con= DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres",
-                    "postgres","postgres");
-            Statement stmt=con.createStatement();
+            Connection con = daoService.getConnection();
+
+            Statement stmt = con.createStatement();
             String query="Create table if not exists " + TABLE_NAME
                     +"( id bigint NOT NULL, "
                     +"menuItem text, "

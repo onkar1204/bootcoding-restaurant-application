@@ -16,7 +16,6 @@ public class AddressGenerator {
         Random random = new Random();
         int randomIndex = random.nextInt(addresses.length);
         String address = addresses[randomIndex];
-        System.out.println("Address = " + address);
         return address;
     }
 

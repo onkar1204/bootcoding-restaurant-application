@@ -11,7 +11,7 @@ public class EmailIdGenerator {
         int randomNumber = random.nextInt(MAX - MIN);
         int year = MIN + randomNumber;
         String emailId = name + year + EMAIL_SUFFIX;
-        System.out.println("Email ID : " + emailId);
+        //System.out.println("Email ID : " + emailId);
         return emailId;
     }
 
