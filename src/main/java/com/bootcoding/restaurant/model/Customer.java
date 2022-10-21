@@ -1,5 +1,7 @@
 package com.bootcoding.restaurant.model;
 
+import java.util.Date;
+
 public class Customer {
 
         private long customerId;
@@ -10,7 +12,17 @@ public class Customer {
         private String state;
         private String emailId;
 
-        public String getName(){
+        private Date createdAt;
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getName(){
             return name;
         }
 

@@ -1,13 +1,38 @@
 package com.bootcoding.restaurant.app;
 
+import com.bootcoding.restaurant.dao.*;
 import com.bootcoding.restaurant.model.Customer;
 import com.bootcoding.restaurant.model.Order;
 import com.bootcoding.restaurant.model.Vendor;
+import com.bootcoding.restaurant.service.CustomerService;
 
 import java.util.Date;
 
 public class Application {
     public static void main(String[] args) {
+
+
+        CustomerDAO cd = new CustomerDAO();
+        cd.createTable();
+
+        MenuItemDAO Md = new MenuItemDAO();
+        Md.createTable();
+
+        OrderDAO OD = new OrderDAO();
+        OD.createTable();
+
+        OrderMenuItemDAO odd = new OrderMenuItemDAO();
+        odd.createTable();
+
+        VendorDAO Vd = new VendorDAO();
+        Vd.createTable();
+
+        CustomerService Cs = new CustomerService();
+       // Cs.createDummyCustomers();
+
+
+    }
+    public void testData(){
         Customer ramesh = new Customer();
         ramesh.setName("Ramesh");
         ramesh.setCity("Nagpur");
