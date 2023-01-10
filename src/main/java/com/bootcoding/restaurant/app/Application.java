@@ -6,7 +6,7 @@ import com.bootcoding.restaurant.model.Order;
 import com.bootcoding.restaurant.model.Vendor;
 import com.bootcoding.restaurant.service.CustomerService;
 import com.bootcoding.restaurant.service.VendorService;
-import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.util.Date;
@@ -80,13 +80,13 @@ public class Application {
     }
 
     private void generateJson(Customer customer){
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            String jsonData = objectMapper.writeValueAsString(customer);
-            System.out.println(jsonData);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+//        try {
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            String jsonData = objectMapper.writeValueAsString(customer);
+//            System.out.println(jsonData);
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
         }
     }
-}
+
 

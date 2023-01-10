@@ -6,7 +6,7 @@ import com.bootcoding.restaurant.utils.AddressGenerator;
 import com.bootcoding.restaurant.utils.EmailIdGenerator;
 import com.bootcoding.restaurant.utils.NameGenerator;
 import com.bootcoding.restaurant.utils.PhoneNumberGenerator;
-import com.fasterxml.jackson.databind.ObjectMapper;
+//import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
