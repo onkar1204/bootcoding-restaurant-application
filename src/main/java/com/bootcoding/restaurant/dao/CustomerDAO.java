@@ -16,7 +16,6 @@ public class CustomerDAO {
         // Inside Constructor
         daoService = new DAOService();
     }
-
     public void insertCustomer(Customer customer) {
         try {
             Connection con = daoService.getConnection();
