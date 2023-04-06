@@ -40,7 +40,6 @@ public class CustomerDAO {
             ex.printStackTrace();
         }
     }
-  
 
     public void createTable() {
         try {
