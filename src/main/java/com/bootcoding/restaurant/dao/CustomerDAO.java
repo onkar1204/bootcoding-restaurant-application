@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 
-
 public class CustomerDAO {
 
     public static final String TABLE_NAME = "app_customer";
