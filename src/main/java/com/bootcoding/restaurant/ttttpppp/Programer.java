@@ -1,3 +1,5 @@
+// This Program Take String and Print it in Reverse Order
+
 package com.bootcoding.restaurant.ttttpppp;
 
 import java.util.Scanner;
@@ -16,10 +18,5 @@ public class Programer {
         for (int i=0 ; i<s1.length ; i++){
             System.out.print(s1[i] + " ");
         }
-
-
-
     }
-
-
 }
